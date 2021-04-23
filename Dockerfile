@@ -13,4 +13,4 @@ python3-pip python3-dev graphviz libgraphviz-dev pkg-config  \
    
 EXPOSE 8000   
     
-CMD ["python", "/app/backend/manage.py", "runserver"]
+CMD ["python3", "/app/backend/manage.py", "runserver"]
