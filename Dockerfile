@@ -6,12 +6,10 @@ WORKDIR /app/
 
 COPY . /app/
 
-RUN apt update
-
-RUN apt install -y \
-python3-pip python3-dev graphviz libgraphviz-dev pkg-config
-
-RUN pip3 install -r backend/requirements.txt
+RUN apt update && apt install -y \
+python3-pip python3-dev graphviz libgraphviz-dev pkg-config  \
+&& pip3 install -r backend/requirements.txt \
+&& apt-get autoremove -y && apt-get clean
    
 EXPOSE 8000   
     
