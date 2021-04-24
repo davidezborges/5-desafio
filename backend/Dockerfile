@@ -1,7 +1,5 @@
 FROM python:3.7.10-slim-buster
 
-ENV SECRET_KEY='5vUCOVMkF2JNhH2CmzY4BnhDiiUtv+reNq2wwxbw31E='
-
 WORKDIR /app
 
 COPY . /app/backend
