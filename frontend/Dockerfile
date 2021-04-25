@@ -9,4 +9,4 @@ COPY . .
 # Install the application's dependencies into the node_modules's cache directory.
 RUN npm install
 
-CMD ["exec", "npm", "start"]
+CMD ["exec", "npm", "start", "--port", "8000"]
