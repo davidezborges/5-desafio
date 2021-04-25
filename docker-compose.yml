@@ -3,6 +3,20 @@ version: "3"
 services:
 
   backend:
+    environment:
+      - SECRET_KEY='5vUCOVMkF2JNhH2CmzY4BnhDiiUtv+reNq2wwxbw31E='
+
+      - DB_NAME=craftech
+
+      - DB_ENGINE=postgres
+
+      - DB_USER=craftech
+
+      - DB_PASS=craftech
+
+      - DB_HOST=127.0.0.1:5432
+
+      - DB_PORT=5432
     build: ./backend
     restart: always
     ports:
@@ -11,6 +25,9 @@ services:
       - craftech-net
   db:
     image: "postgres:13.2-alpine"
+    environment:
+      - POSTGRES_PASSWORD=craftech
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - "5432:5432"
     networks:
@@ -18,9 +35,6 @@ services:
   frontend:
     build: ./frontend
     command: ["npm", "start"]
-    volumes:
-      - ./frontend:/app/frontend
-      - node-modules:/app/frontend/node_modules
     ports:
       - "3000:3000"
     environment:
