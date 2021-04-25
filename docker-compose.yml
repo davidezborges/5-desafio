@@ -36,11 +36,11 @@ services:
       - craftech-net
   frontend:
     build: ./frontend
-    command: ["npm", "start"]
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV:development
+
     networks:
       - craftech-net
 volumes:
