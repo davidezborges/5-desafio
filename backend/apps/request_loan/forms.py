@@ -12,7 +12,7 @@ class RequestLoanModelForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        url = "http://localhost:7001/api/v1/scoring/?document_number={0}&gender={1}&email={2}"\
+        url = "http://localhost:8000/api/v1/scoring/?document_number={0}&gender={1}&email={2}"\
             .format(cleaned_data['document_number'], cleaned_data['gender'].upper(), cleaned_data['email'])
         response = requests.get(url)
         if response.json().get('error'):
