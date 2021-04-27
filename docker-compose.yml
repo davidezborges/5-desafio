@@ -39,7 +39,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV:development
+      - NODE_ENV=development
+      - ENDPOINT=http://localhost:8000/api/requests-loan/
 
     networks:
       - craftech-net
