@@ -15,7 +15,7 @@ FROM nginx:stable-alpine
 
 COPY --from=0 /app/frontend/public /bin/www
 
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
