@@ -38,13 +38,8 @@ services:
     build: ./frontend
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=development
-      - ENDPOINT=http://localhost:8000/api/requests-loan/
-
+      - "8080:80"
     networks:
       - craftech-net
-volumes:
-  node-modules:
 networks:
   craftech-net:
