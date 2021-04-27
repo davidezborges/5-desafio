@@ -13,9 +13,9 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 
-COPY --from=0 /app/frontend/ build /bin/www
+COPY --from=0 /app/frontend/public /bin/www
 
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
