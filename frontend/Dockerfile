@@ -13,7 +13,7 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 
-COPY --from=0 /app/frontend/public /bin/www
+COPY --from=0 /app/frontend/public /usr/share/nginx/html
 
 COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
