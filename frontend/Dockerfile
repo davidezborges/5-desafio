@@ -1,5 +1,5 @@
 # Set the base image.
-FROM node:10
+FROM node:10 as build
 
 # Create and define the node_modules's cache directory.
 WORKDIR /app/frontend
@@ -7,8 +7,16 @@ WORKDIR /app/frontend
 COPY . .
 
 # Install the application's dependencies into the node_modules's cache directory.
-RUN npm install
+RUN npm install --production
 
 RUN npm run build
 
-CMD ["npm", "start"]
+FROM nginx:stable-alpine
+
+COPY --from=build /app/frontend/ build /bin/www
+
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD [ "nginx", "-g", "daemon off;" ]
