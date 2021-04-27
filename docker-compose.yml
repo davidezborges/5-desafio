@@ -36,6 +36,8 @@ services:
       - craftech-net
   frontend:
     build: ./frontend
+    environment:
+      - ENDPOINT='http://backend:8000/api/requests-loan/'
     ports:
       - "3000:3000"
       - "8080:80"
