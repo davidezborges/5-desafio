@@ -25,7 +25,7 @@ services:
       - craftech-net
     depends_on:
       - db
-  db:
+  db:https://www.paypal.com/ar/webapps/mpp/withdraw-funds/nubi
     image: "postgres:13.2-alpine"
     environment:
       - POSTGRES_PASSWORD=craftech
@@ -37,9 +37,8 @@ services:
   frontend:
     build: ./frontend
     environment:
-      - ENDPOINT='http://backend:8000/api/requests-loan/'
+      - ENDPOINT='http://192.168.158.128:8000/api/requests-loan/'
     ports:
-      - "3000:3000"
       - "8080:80"
     networks:
       - craftech-net

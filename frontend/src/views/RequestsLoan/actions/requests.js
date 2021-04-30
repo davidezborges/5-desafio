@@ -1,6 +1,6 @@
 import { message } from 'antd';
 
-const ENDPOINT = '';
+const ENDPOINT = '192.168.158.128:8000';
 
 
 export const list = (params) => {
