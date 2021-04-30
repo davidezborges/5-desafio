@@ -1,6 +1,6 @@
 import { message } from 'antd';
 
-const ENDPOINT = '192.168.158.128:8000';
+const ENDPOINT = 'http://0.0.0.0:8000/api/requests-loan/';
 
 
 export const list = (params) => {
