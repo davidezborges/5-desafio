@@ -25,7 +25,7 @@ services:
       - craftech-net
     depends_on:
       - db
-  db:https://www.paypal.com/ar/webapps/mpp/withdraw-funds/nubi
+  db:
     image: "postgres:13.2-alpine"
     environment:
       - POSTGRES_PASSWORD=craftech
