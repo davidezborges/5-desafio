@@ -8,7 +8,7 @@ services:
 
       - DB_NAME=craftech
 
-      - DB_ENGINE=ENDPOINT="postgresql"
+      - DB_ENGINE="postgresql"
 
       - DB_USER=craftech
 

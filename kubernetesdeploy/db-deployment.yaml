@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose convert -o kubernetesdeploy/
-    kompose.version: 1.21.0 ()
+    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -o kubernetesdeploy/
+    kompose.version: 1.21.0 (992df58d8)
   creationTimestamp: null
   labels:
     io.kompose.service: db
@@ -17,8 +17,8 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose convert -o kubernetesdeploy/
-        kompose.version: 1.21.0 ()
+        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -o kubernetesdeploy/
+        kompose.version: 1.21.0 (992df58d8)
       creationTimestamp: null
       labels:
         io.kompose.network/craftech-net: "true"
